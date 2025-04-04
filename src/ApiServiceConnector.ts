@@ -7,9 +7,7 @@ import {
   ClientProtocol,
   GenericOperationConfig,
   GraphQLOperationConfig,
-  GRPCOperationConfig,
   HttpRequestConfig,
-  TRPCOperationConfig,
 } from './types/ApiServiceConnectorTypes';
 import { GenericAdapter } from './types/GenericAdapter';
 import { GraphQLAdapter } from './types/GraphQLAdapter';
@@ -24,7 +22,10 @@ const PROTOCOL_DETECTORS: Record<
   Generic: adapter => 'client' in adapter && 'executeRequest' in adapter,
 };
 
-export class ApiServiceConnector<TAdapter extends ApiRequestFormat> {
+export class ApiServiceConnector<
+  TAdapter extends ApiRequestFormat,
+  TCacheShape = NormalizedCacheObject,
+> {
   private static connectorRegistry = new Map<
     string,
     ApiServiceConnector<
@@ -76,12 +77,12 @@ export class ApiServiceConnector<TAdapter extends ApiRequestFormat> {
     ).axiosInstance.defaults.headers.authorization = `Bearer ${accessToken}`;
   }
 
-  getGraphQLClient(): ApolloClient<NormalizedCacheObject> {
+  getGraphQLClient(): ApolloClient<TCacheShape> {
     if (this.protocolType !== 'GraphQL') {
       throw new Error('Cliente GraphQL não disponível neste conector');
     }
 
-    return (this.adapterClient as GraphQLAdapter).apolloClient;
+    return (this.adapterClient as GraphQLAdapter<TCacheShape>).apolloClient;
   }
 
   request<TResponse>(
@@ -111,7 +112,7 @@ export class ApiServiceConnector<TAdapter extends ApiRequestFormat> {
 
     if (this.protocolType === 'GraphQL') {
       return this.executeGraphQLOperation(
-        this.adapterClient as GraphQLAdapter,
+        this.adapterClient as GraphQLAdapter<TCacheShape>,
         config as GraphQLOperationConfig,
       );
     }
@@ -157,7 +158,7 @@ export class ApiServiceConnector<TAdapter extends ApiRequestFormat> {
   }
 
   private async executeGraphQLOperation<TResponse>(
-    adapter: GraphQLAdapter,
+    adapter: GraphQLAdapter<TCacheShape>,
     { query, variables, headers }: GraphQLOperationConfig,
   ): Promise<AxiosResponse<TResponse>> {
     const { apolloClient } = adapter;
