@@ -1,10 +1,9 @@
+import { DocumentNode } from '@apollo/client';
 import { GenericAdapter } from './GenericAdapter';
 import { GraphQLAdapter } from './GraphQLAdapter';
-import { GRPCAdapter } from './GRPCAdapter';
 import { RESTAdapter } from './RESTAdapter';
-import { TRPCAdapter } from './TRPCAdapter';
 
-export type ClientProtocol = 'REST' | 'GraphQL' | 'gRPC' | 'tRPC' | 'Generic';
+export type ClientProtocol = 'REST' | 'GraphQL' | 'Generic';
 
 export type HttpRequestConfig = {
   url: string;
@@ -73,6 +72,4 @@ export type ApiRequestConfig =
 export type ApiRequestFormat =
   | RESTAdapter
   | GraphQLAdapter
-  | GRPCAdapter
-  | TRPCAdapter
   | GenericAdapter;
