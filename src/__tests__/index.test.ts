@@ -44,8 +44,8 @@ describe('Nexus exports', () => {
   });
 
   it('should export Apollo dependencies', () => {
-    expect(NexusExports.ApolloClient).toBe(ApolloClient);
-    expect(NexusExports.InMemoryCache).toBe(InMemoryCache);
+    expect(NexusExports.NexusApollo.ApolloClient).toBe(ApolloClient);
+    expect(NexusExports.NexusApollo.InMemoryCache).toBe(InMemoryCache);
   });
 
   it('should export adapter types', () => {

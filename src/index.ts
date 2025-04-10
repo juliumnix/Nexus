@@ -1,4 +1,5 @@
-import { ApolloClient, InMemoryCache } from "@apollo/client";
+import * as Apollo from "@apollo/client";
+import axios from "axios";
 import { Nexus } from "./Nexus";
 import { ApiServiceConnector } from "./ApiServiceConnector";
 import {
@@ -13,9 +14,13 @@ import { RESTAdapter } from "./types/RESTAdapter";
 import { GraphQLAdapter } from "./types/GraphQLAdapter";
 import { GenericAdapter } from "./types/GenericAdapter";
 
+// Export Apollo under the NexusApollo namespace
+export const NexusApollo = Apollo;
+
+// Export axios under the NexusAxios namespace
+export const NexusAxios = axios;
+
 export {
-  ApolloClient,
-  InMemoryCache,
   Nexus,
   ApiServiceConnector,
   // Types
