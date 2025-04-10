@@ -1,4 +1,5 @@
-import { Nexus } from './Nexus';
-import * as NexusTypes from './types';
+import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { Nexus } from "./Nexus";
+import * as NexusTypes from "./types";
 
-export { Nexus, NexusTypes };
+export { ApolloClient, InMemoryCache, Nexus, NexusTypes };
