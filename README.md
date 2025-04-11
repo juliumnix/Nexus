@@ -13,11 +13,13 @@ Nexus is a powerful library that allows you to connect to any API service using 
 ## Installation
 
 ```bash
-# Using npm
-npm install nexus
+npm install @juliumnix/nexus
+```
 
-# Using yarn
-yarn add nexus
+or
+
+```bash
+yarn add @juliumnix/nexus
 ```
 
 ## Quick Example

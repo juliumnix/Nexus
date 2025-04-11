@@ -22,7 +22,7 @@ class ApiServiceConnector<
 You don't directly instantiate `ApiServiceConnector`, but obtain it through the `Nexus.instanciate()` method:
 
 ```typescript
-import { Nexus, RESTAdapter, NexusAxios } from 'nexus';
+import { Nexus, RESTAdapter, NexusAxios } from '@juliumnix/nexus';
 
 export class RESTConfig implements RESTAdapter {
   axiosInstance = NexusAxios.create({

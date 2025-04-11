@@ -108,7 +108,7 @@ interface GraphQLResponse<T = any> {
 A biblioteca Nexus é totalmente tipada, permitindo verificação de tipo em tempo de compilação:
 
 ```typescript
-import { ApiServiceConnector } from 'nexus';
+import { ApiServiceConnector } from '@juliumnix/nexus';
 import axios from 'axios';
 
 interface User {

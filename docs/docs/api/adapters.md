@@ -28,7 +28,7 @@ interface RESTAdapter {
 
 ```typescript
 import axios from 'axios';
-import { ApiServiceConnector } from 'nexus';
+import { ApiServiceConnector } from '@juliumnix/nexus';
 
 const restAdapter: RESTAdapter = {
   axiosInstance: axios.create({
@@ -65,7 +65,7 @@ interface GraphQLAdapter<TCacheShape = NormalizedCacheObject> {
 
 ```typescript
 import { ApolloClient, InMemoryCache } from '@apollo/client';
-import { ApiServiceConnector } from 'nexus';
+import { ApiServiceConnector } from '@juliumnix/nexus';
 
 const graphqlAdapter: GraphQLAdapter = {
   apolloClient: new ApolloClient({
@@ -100,7 +100,7 @@ interface GenericAdapter {
 ### Example
 
 ```typescript
-import { ApiServiceConnector } from 'nexus';
+import { ApiServiceConnector } from '@juliumnix/nexus';
 import { CustomApiClient } from './custom-client';
 
 const customClient = new CustomApiClient('https://api.example.com');

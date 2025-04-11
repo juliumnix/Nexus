@@ -39,7 +39,7 @@ An `ApiServiceConnector` instance configured for the specified API type.
 #### Example
 
 ```typescript
-import { Nexus, RESTAdapter, NexusAxios } from 'nexus';
+import { Nexus, RESTAdapter, NexusAxios } from '@juliumnix/nexus';
 
 // For REST API
 export class RESTConfig implements RESTAdapter {
@@ -56,7 +56,7 @@ const apiConnector = Nexus.instanciate(new RESTConfig());
 ```
 
 ```typescript
-import { Nexus, GraphQLAdapter, ApolloClient, InMemoryCache } from 'nexus';
+import { Nexus, GraphQLAdapter, ApolloClient, InMemoryCache } from '@juliumnix/nexus';
 
 // For GraphQL API
 export class GraphQLConfig implements GraphQLAdapter {

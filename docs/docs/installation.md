@@ -18,11 +18,13 @@ Nexus requires:
 You can install Nexus using npm or yarn:
 
 ```bash
-# Using npm
-npm install nexus
+npm install @juliumnix/nexus
+```
 
-# Using yarn
-yarn add nexus
+or
+
+```bash
+yarn add @juliumnix/nexus
 ```
 
 ## Peer Dependencies
@@ -54,7 +56,7 @@ You can install only the dependencies you need based on which adapters you plan 
 To verify that Nexus is installed correctly, you can create a simple test file:
 
 ```typescript
-import { Nexus, ApiServiceConnector } from 'nexus';
+import { Nexus, ApiServiceConnector } from '@juliumnix/nexus';
 
 // If you can import these without errors, the installation was successful
 console.log('Nexus installation successful!');
