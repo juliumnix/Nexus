@@ -13,11 +13,11 @@ const config: Config = {
   url: 'https://nexus-api-docs.example.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/Nexus/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'your-organization', // Usually your GitHub org/user name.
+  organizationName: 'juliumnix', // Usually your GitHub org/user name.
   projectName: 'nexus', // Usually your repo name.
 
   onBrokenLinks: 'throw',
@@ -40,7 +40,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/your-organization/nexus/tree/main/docs/',
+            'https://github.com/juliumnix/nexus/tree/main/docs/',
         },
         blog: false,
         theme: {
@@ -120,7 +120,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Nexus. Built with Docusaurus.`,
+      copyright: `Copyright ${new Date().getFullYear()} Nexus. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
